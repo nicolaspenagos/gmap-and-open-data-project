@@ -1,0 +1,6 @@
+C:\Users\usuario\source\repos\Gmapsapp\model\bin\Debug\model.exe.config
+C:\Users\usuario\source\repos\Gmapsapp\model\bin\Debug\model.exe
+C:\Users\usuario\source\repos\Gmapsapp\model\bin\Debug\model.pdb
+C:\Users\usuario\source\repos\Gmapsapp\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\usuario\source\repos\Gmapsapp\model\obj\Debug\model.exe
+C:\Users\usuario\source\repos\Gmapsapp\model\obj\Debug\model.pdb
