@@ -10,3 +10,9 @@ C:\Users\juanj\Desktop\Proyecto\gmap-and-open-data-project\model\bin\Debug\model
 C:\Users\juanj\Desktop\Proyecto\gmap-and-open-data-project\model\obj\Debug\model.csprojAssemblyReference.cache
 C:\Users\juanj\Desktop\Proyecto\gmap-and-open-data-project\model\obj\Debug\model.exe
 C:\Users\juanj\Desktop\Proyecto\gmap-and-open-data-project\model\obj\Debug\model.pdb
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\bin\Debug\model.exe.config
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\bin\Debug\model.exe
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\bin\Debug\model.pdb
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.exe
+C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.pdb

@@ -23,8 +23,9 @@ namespace model
         private bool cancelled;
         private double distance;
 
-        public Flight(int month, int dayOFTheMonth, int dayOFTheWeek, string flightDate, int airlineId, string airline, int flightNumber, int originAirport, int destAirport, string originState, string destState, bool cancelled, double distance)
+        public Flight(int year, int month, int dayOFTheMonth, int dayOFTheWeek, string flightDate, int airlineId, string airline, int flightNumber, int originAirport, int destAirport, string originState, string destState, bool cancelled, double distance)
         {
+            this.year = year;
             this.month = month;
             this.dayOfTheMonth = dayOFTheMonth;
             this.dayOfTheWeek = dayOFTheWeek;
@@ -55,6 +56,10 @@ namespace model
         public int getAirlineId()
         {
             return airlineId;
+        }
+
+        public string getFlightDate() {
+            return flightDate;
         }
 
         public string getAirline() {
@@ -88,6 +93,15 @@ namespace model
         public double getDistance() {
             return distance;
         }
+
+        public int getYear() {
+            return year;
+        }
+        public string getInfo() {
+            String msg = " FLIGHT INFO    Year:"+year+"  Month:"+month+"  Day of the month:"+dayOfTheMonth+"  Day of the week:"+dayOfTheWeek+"  Flight date:"+flightDate+"  AirlineId:"+airlineId+"  Airline:"+airline+"  Flight number:"+flightNumber+"  Origin airport:"+originAirport+"  Destiny airport:"+destAirport+"  Origin State:"+originState+"  Destiny State:"+destState+"  Cancelled:"+cancelled+"  Distance:"+distance;
+            return msg;
+        }
+
 
        
 
