@@ -24,8 +24,8 @@ namespace model
 
 
         public void load() {
-
-            StreamReader sr = new StreamReader("C:\\Users\\usuario\\source\\repos\\Gmapsapp\\dataSet.csv");
+            string relativePath = "..\\..\\Properties\\dataSet.csv";
+            StreamReader sr = new StreamReader(relativePath);
             string line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null) {
                 String[] parts = line.Split(';');
