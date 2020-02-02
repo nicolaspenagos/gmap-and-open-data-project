@@ -1,11 +1,11 @@
-<h1>Gmap and open data prohect</h1>
+<h1>Gmap and open data project</h1>
 
 
 ### Prerequisites
 
 This program requires a data set archive that its not included in the repository because of it´s size. In that order you will require to download that data set from the following link: https://bit.ly/2OkOyio
 
-The next step will be to place the archive in the right path for it to be read it properly. Follow the next path and place the archive dataSet.csv : "gmap-and-open-data-project\Gmapsapp\Properties"
+The next step will be to place the archive you just downloaded in the right path for it to be read properly by the program. Follow the next path and place the archive dataSet.csv : "gmap-and-open-data-project\Gmapsapp\Properties"
 
 
 ## Made by
