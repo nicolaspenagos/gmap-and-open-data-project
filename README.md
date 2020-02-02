@@ -12,7 +12,7 @@ The next step will be to place the archive you just downloaded in the right path
   <ul>
   <li><div><a href="https://github.com/anamvgd" title="Juan Lectamo">Ana María Muñoz</a></div></li>
   <li><div><a href="https://github.com/JuanC721" title="Juan Calderon">Juan José Calderón</a></div></li>
-  <li><div><a href="https://github.com/nicolaspenagos" title="Nicolas Penagos">Nicolas Penagos</a></div></li>
+  <li><div><a href="https://github.com/nicolaspenagos" title="Nicolas Penagos">Nicolás Penagos</a></div></li>
   </ul> 
 
   
