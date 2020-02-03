@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET.WindowsForms.Markers;
 using model; 
 
 
@@ -27,7 +28,12 @@ namespace Gmapsapp
         {
             gmap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+           
+            gmap.Zoom = 10;
+            gmap.MinZoom = 5;
+            gmap.MaxZoom = 100;
             gmap.SetPositionByKeywords("Cali, Colombia");
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
