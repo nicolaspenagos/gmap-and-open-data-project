@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using model; 
 
@@ -17,6 +20,9 @@ namespace Gmapsapp
 {
     public partial class Form1 : Form
     {
+
+       
+
         private FAA faa;
         public Form1()
         {
@@ -26,9 +32,9 @@ namespace Gmapsapp
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-            gmap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
-           
+           gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
+           GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+
             gmap.Zoom = 10;
             gmap.MinZoom = 5;
             gmap.MaxZoom = 100;
@@ -67,6 +73,8 @@ namespace Gmapsapp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            GMapOverlay markers = new GMapOverlay("markers");
+            //markers.Clear();
             int n = e.RowIndex;
 
             if (n!=-1) {
@@ -78,6 +86,37 @@ namespace Gmapsapp
                 textBox6.Text = (string)dataGridView1.Rows[n].Cells[5].Value.ToString();
                 textBox5.Text = (string)dataGridView1.Rows[n].Cells[6].Value.ToString();
             }
+
+           // Coordenate c;
+           // double x1 = 25.793333;        
+           // double y1 = -80.290556;
+          //  double x2 = 33.9425;
+           // double y2 = -118.408056;
+
+          
+        //    GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(x2, y2), GMarkerGoogleType.blue_dot);
+
+         
+
+            GeoCoderStatusCode statusCode;
+            var pointLatLng = OpenStreetMapProvider.Instance.GetPoint(textBox6.Text.Trim(), out statusCode);
+
+            
+            string lat = pointLatLng?.Lat.ToString();
+            string lon = pointLatLng?.Lng.ToString();
+
+            MessageBox.Show(textBox6.Text.Trim() + lat +" " +lon);
+
+            double x1 = double.Parse(lat);
+                double y1 = double.Parse(lon);
+                GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(x1, y1), GMarkerGoogleType.blue_dot);
+                Console.WriteLine(lat + "  " + lon);
+                markers.Markers.Add(marker1);
+
+                gmap.Overlays.Add(markers);
+         
+            
+
         }
     }
 }

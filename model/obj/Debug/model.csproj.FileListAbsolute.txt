@@ -16,3 +16,9 @@ C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\bin\Debug\model.pdb
 C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.csprojAssemblyReference.cache
 C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.exe
 C:\Users\usuario\Desktop\C#\gmap-and-open-data-project\model\obj\Debug\model.pdb
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\bin\Debug\model.exe.config
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\bin\Debug\model.exe
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\bin\Debug\model.pdb
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\obj\Debug\model.exe
+C:\Users\1143876087\Source\Repos\gmap-and-open-data-project\model\obj\Debug\model.pdb

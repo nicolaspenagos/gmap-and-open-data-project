@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coordenate.cs" />
     <Compile Include="FAA.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="Program.cs" />
