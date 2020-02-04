@@ -32,29 +32,41 @@ namespace Gmapsapp
             faa = new FAA("Federal Aviation Administration");
             currentPage = 1;
             txtBoxCurrentPage.Text = currentPage + "";
-            load = false;
+   
+            label13.Visible = false;
+         
+            MessageBox.Show("This program requires a data set archive that its not included in the repository because of it´s size. Please read the README in gitHub for more info.");
 
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
+            
             gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
 
             gmap.Zoom = 10;
             gmap.MinZoom = 5;
             gmap.MaxZoom = 100;
-            gmap.SetPositionByKeywords("Cali, Colombia");
+           
+          
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label13.Visible = true;
+           
+            MessageBox.Show("This operation can take a few seconds");
             faa.load();
             load = true;
             List<Flight> currentFlights = faa.getFlight();
 
             showFlights();
+
+            button1.Enabled = false;
+            label13.Visible = false;
+
 
 
         }
@@ -217,87 +229,74 @@ namespace Gmapsapp
 
         public void showFlights(List<Flight> flights)
         {
-            /*
-            int i, j;
+            if (flights.Count != 0)
+            {
+                dataGridView1.Rows.Clear();
 
-            if (currentPage == 1)
-            {
-                i = 0;
-                j = 5000;
-            }
-            else if (currentPage == 2)
-            {
-                i = 5001;
-                j = 10000;
-            }
-            else if (currentPage == 3)
-            {
-                i = 10001;
-                j = 15000;
-            }
-            else if (currentPage == 4)
-            {
-                i = 15001;
-                j = 20000;
-            }
-            else if (currentPage == 5)
-            {
-                i = 20001;
-                j = 25000;
-            }
-            else if (currentPage == 6)
-            {
-                i = 25001;
-                j = 30000;
-            }
-            else if (currentPage == 7)
-            {
-                i = 30001;
-                j = 35000;
-            }
-            else
-            {
-                i = 35001;
-                j = 40000;
-            }
-            */
-            dataGridView1.Rows.Clear();
+                for (int k = 0; k < flights.Count; k++)
+                {
+                    Flight currentFlight = flights.ElementAt(k);
+                    int n = dataGridView1.Rows.Add();
 
-            for (int k = 0; k < flights.Count; k++)
-            {
-                Flight currentFlight = flights.ElementAt(k);
-                int n = dataGridView1.Rows.Add();
-
-                dataGridView1.Rows[n].Cells[0].Value = (k + 1) + "";
-                dataGridView1.Rows[n].Cells[1].Value = currentFlight.getYear();
-                dataGridView1.Rows[n].Cells[2].Value = currentFlight.getFlightDate();
-                dataGridView1.Rows[n].Cells[3].Value = currentFlight.getFlightNumber();
-                dataGridView1.Rows[n].Cells[4].Value = currentFlight.getAirlineId();
-                dataGridView1.Rows[n].Cells[5].Value = currentFlight.getAirline();
-                dataGridView1.Rows[n].Cells[6].Value = currentFlight.getOriginState();
-                dataGridView1.Rows[n].Cells[7].Value = currentFlight.getDestState();
-                dataGridView1.Rows[n].Cells[8].Value = currentFlight.getCancelled();
-                dataGridView1.Rows[n].Cells[9].Value = currentFlight.getDistance();
+                    dataGridView1.Rows[n].Cells[0].Value = (k + 1) + "";
+                    dataGridView1.Rows[n].Cells[1].Value = currentFlight.getYear();
+                    dataGridView1.Rows[n].Cells[2].Value = currentFlight.getFlightDate();
+                    dataGridView1.Rows[n].Cells[3].Value = currentFlight.getFlightNumber();
+                    dataGridView1.Rows[n].Cells[4].Value = currentFlight.getAirlineId();
+                    dataGridView1.Rows[n].Cells[5].Value = currentFlight.getAirline();
+                    dataGridView1.Rows[n].Cells[6].Value = currentFlight.getOriginState();
+                    dataGridView1.Rows[n].Cells[7].Value = currentFlight.getDestState();
+                    dataGridView1.Rows[n].Cells[8].Value = currentFlight.getCancelled();
+                    dataGridView1.Rows[n].Cells[9].Value = currentFlight.getDistance();
+                }
             }
+            else {
+                MessageBox.Show("There is no flight that matches with the entered info");
+            }
+
+          
+            
         }
 
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            if (!comboBox1.Text.Equals("") && comboBox1.Text != null)
+            if (!comboBox1.Text.Equals("") && comboBox1.Text != null && !textBox7.Text.Equals("") && textBox7.Text != null)
             {
-                if (!textBox7.Text.Equals("") && textBox7.Text != null)
+                button2.Enabled = false;
+                button3.Enabled = false;
+                label13.Visible = true;
+                currentPage = 1;
+                MessageBox.Show("This operation can take a few seconds");
+                if (!comboBox1.Text.Equals("") && comboBox1.Text != null)
                 {
-                    string toCompare = textBox7.Text;
-                    string parameter = comboBox1.Text;
+                    if (!textBox7.Text.Equals("") && textBox7.Text != null)
+                    {
+                        string toCompare = textBox7.Text;
+                        string parameter = comboBox1.Text;
 
-                    showFlights(faa.toFilter(toCompare, parameter));
+                        showFlights(faa.toFilter(toCompare, parameter));
 
+                    }
                 }
+
+                label13.Visible = false;
             }
+            else {
+                MessageBox.Show("Please enter all the requested info");
+            }
+            comboBox1.Text = "";
+            textBox7.Text = "";
 
         }
 
-      
+        private void button5_Click(object sender, EventArgs e)
+        {
+            currentPage = 1;
+            txtBoxCurrentPage.Text = currentPage+"";
+            button2.Enabled = true;
+            button3.Enabled = true;
+            showFlights();
+        }
     }
 }

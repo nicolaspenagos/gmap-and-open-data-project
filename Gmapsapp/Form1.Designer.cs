@@ -64,6 +64,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -271,7 +274,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 12;
-        
             // 
             // textBox2
             // 
@@ -391,7 +393,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(1249, 66);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 55);
+            this.button4.Size = new System.Drawing.Size(182, 25);
             this.button4.TabIndex = 26;
             this.button4.Text = "FILTER";
             this.button4.UseVisualStyleBackColor = true;
@@ -413,12 +415,42 @@
             this.textBox7.Size = new System.Drawing.Size(167, 22);
             this.textBox7.TabIndex = 28;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1356, 830);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 17);
+            this.label12.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1275, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 17);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Loading ...";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1249, 93);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(182, 23);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "SHOW ALL";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1457, 860);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button4);
@@ -492,6 +524,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button5;
     }
 }
 
