@@ -75,35 +75,49 @@ namespace Gmapsapp
                 textBox5.Text = (string)dataGridView1.Rows[n].Cells[6].Value.ToString();
             }
 
-           // Coordenate c;
-           // double x1 = 25.793333;        
-           // double y1 = -80.290556;
-          //  double x2 = 33.9425;
-           // double y2 = -118.408056;
+            // Coordenate c;
+            // double x1 = 25.793333;        
+            // double y1 = -80.290556;
+            //  double x2 = 33.9425;
+            // double y2 = -118.408056;
 
-          
-        //    GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(x2, y2), GMarkerGoogleType.blue_dot);
 
-         
+            //    GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(x2, y2), GMarkerGoogleType.blue_dot);
+
+
 
             GeoCoderStatusCode statusCode;
             var pointLatLng = OpenStreetMapProvider.Instance.GetPoint(textBox6.Text.Trim(), out statusCode);
+            var pointLatLng2 = OpenStreetMapProvider.Instance.GetPoint(textBox5.Text.Trim(), out statusCode);
 
-            
-            string lat = pointLatLng?.Lat.ToString();
-            string lon = pointLatLng?.Lng.ToString();
+            string lat1 = pointLatLng?.Lat.ToString();
+            string lon1 = pointLatLng?.Lng.ToString();
+            string lat2 = pointLatLng2?.Lat.ToString();
+            string lon2 = pointLatLng2?.Lng.ToString();
 
-            MessageBox.Show(textBox6.Text.Trim() + lat +" " +lon);
 
-            double x1 = double.Parse(lat);
-                double y1 = double.Parse(lon);
-                GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(x1, y1), GMarkerGoogleType.blue_dot);
-                Console.WriteLine(lat + "  " + lon);
-                markers.Markers.Add(marker1);
+            //  MessageBox.Show(textBox6.Text.Trim() + lat1 +" " +lon1);
 
-                gmap.Overlays.Add(markers);
-         
-            
+            double x1 = double.Parse(lat1);
+            double y1 = double.Parse(lon1);
+            double x2 = double.Parse(lat2);
+            double y2 = double.Parse(lon2);
+
+            GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(x1, y1), GMarkerGoogleType.blue_dot);
+            GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(x2, y2), GMarkerGoogleType.blue_dot);
+            Console.WriteLine(lat1 + "  " + lon1);
+            markers.Markers.Add(marker1);
+            markers.Markers.Add(marker2);
+            gmap.Overlays.Add(markers);
+
+            GMapOverlay ruta = new GMapOverlay("CP");
+            List<PointLatLng> puntos = new List<PointLatLng>();
+
+            puntos.Add(new PointLatLng(x1, y1));
+            GMapRoute puntosRuta = new GMapRoute(puntos, "Ruta");
+            ruta.Routes.Add(puntosRuta);
+            gmap.Overlays.Add(ruta);
+
 
         }
 
